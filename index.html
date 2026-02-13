@@ -8,7 +8,7 @@
     <style>
         /* Estilos Base */
         :root {
-            --primary-color: #ff4d4d; /* Tom de destaque da Marko */
+            --primary-color: #ff4d4d;
             --dark-bg: #0a0a0a;
             --text-light: #ffffff;
             --text-dark: #333333;
@@ -17,6 +17,9 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
         body { background-color: #fff; color: var(--text-dark); }
+        
+        /* Ajuste global para links nos cards */
+        a { text-decoration: none; color: inherit; }
 
         /* Header */
         header {
@@ -51,7 +54,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
             transition: 0.3s;
         }
         .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
@@ -79,7 +81,6 @@
             background: var(--primary-color);
             color: white;
             padding: 18px 35px;
-            text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
             font-size: 1.1rem;
@@ -94,19 +95,26 @@
         .services { padding: 100px 10%; text-align: center; background: #fdfdfd; }
         .services h2 { font-size: 2.5rem; margin-bottom: 60px; font-weight: 800; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        
+        /* Card Linkable */
         .card {
             padding: 50px 30px;
             background: #fff;
             border-radius: 20px;
             border: 1px solid #eee;
             transition: 0.3s;
+            display: block; /* Garante que o link ocupe o card todo */
+            cursor: pointer;
         }
-        .card:hover { border-color: var(--primary-color); transform: translateY(-5px); }
+        .card:hover { border-color: var(--primary-color); transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
         .card i { font-size: 45px; color: var(--primary-color); margin-bottom: 25px; }
-        .card h3 { margin-bottom: 15px; font-size: 1.5rem; }
+        .card h3 { margin-bottom: 15px; font-size: 1.5rem; color: #000; }
+        .card p { color: #666; }
 
         /* Footer */
         footer { background: #000; color: #666; padding: 60px 10% 30px; text-align: center; }
+        footer a { color: #888; transition: 0.3s; }
+        footer a:hover { color: var(--primary-color); }
         footer p { font-size: 0.9rem; margin-top: 20px; }
         
         @media (max-width: 768px) {
@@ -124,13 +132,13 @@
 
     <header>
         <div class="logo">VITRINE VIVA<span>.</span></div>
-        <a href="https://wa.me/5515936182306?text=Vim pelo site e quero escalar meu negócio!" class="cta-button" style="padding: 10px 20px; font-size: 0.9rem;">Falar com Especialista</a>
+        <a href="https://wa.me/5515936182306?text=Olá! Estava navegando no site e gostaria de falar com um especialista." class="cta-button" style="padding: 10px 20px; font-size: 0.9rem;">Falar com Especialista</a>
     </header>
 
     <section class="hero">
         <h1>Sua empresa no topo do mercado digital.</h1>
         <p>Criativos novos, design de alta conversão validadas para escalar o seu faturamento de forma previsível.</p>
-        <a href="https://wa.me/5515936182306?text=Vim pelo site e quero escalar meu negócio!" class="cta-button" target="_blank">
+        <a href="https://wa.me/5515936182306?text=Quero resultados agora! Vim pelo site." class="cta-button" target="_blank">
             <i class="fab fa-whatsapp"></i> QUERO RESULTADOS AGORA
         </a>
     </section>
@@ -138,31 +146,37 @@
     <section id="servicos" class="services">
         <h2>Como ajudamos seu negócio</h2>
         <div class="grid">
-            <div class="card">
+            
+            <a href="https://wa.me/5515936182306?text=Olá! Gostaria de saber mais sobre Gestão de Criativos." class="card" target="_blank">
                 <i class="fas fa-rocket"></i>
                 <h3>Gestão de Criativos</h3>
                 <p>Criativos que vendem. Google Ads, Facebook Ads e Instagram Ads focados em ROI.</p>
-            </div>
-            <div class="card">
+            </a>
+
+            <a href="https://wa.me/5515936182306?text=Olá! Gostaria de um orçamento para Web Design." class="card" target="_blank">
                 <i class="fas fa-pencil-ruler"></i>
                 <h3>Web Design</h3>
                 <p>Criação de Landing Pages e sites institucionais modernos e ultra velozes.</p>
-            </div>
-            <div class="card">
+            </a>
+
+            <a href="https://wa.me/5515936182306?text=Olá! Tenho interesse em uma Estratégia Digital personalizada." class="card" target="_blank">
                 <i class="fas fa-bullseye"></i>
                 <h3>Estratégia Digital</h3>
                 <p>Consultoria completa para posicionar sua marca como autoridade no seu nicho.</p>
-            </div>
+            </a>
+
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
             <p>Siga-nos: 
-              <a href="https://www.instagram.com/avitrineviva/">
-                <i class="fab fa-instagram" style="margin-left: 10px;"></i> </a>
-              <a href="https://www.facebook.com/profile.php?id=61587001426265">
-                <i class="fab fa-facebook" style="margin-left: 10px;"></i> </a>
+              <a href="https://www.instagram.com/avitrineviva/" target="_blank">
+                <i class="fab fa-instagram" style="margin-left: 10px;"></i> 
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61587001426265" target="_blank">
+                <i class="fab fa-facebook" style="margin-left: 10px;"></i> 
+              </a>
             </p>
             <hr style="border: 0; border-top: 1px solid #222; margin: 30px 0;">
             <p>&copy; 2026 Agência Vitrine Viva. Todos os direitos reservados.</p>

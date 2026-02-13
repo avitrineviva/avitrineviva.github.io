@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitrine Viva | Especialista em Estrutura Digital e Geração de Demanda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Estilos Base */
+        :root {
+            --primary-color: #ff4d4d; /* Tom de destaque da Marko */
+            --dark-bg: #0a0a0a;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: #fff; color: var(--text-dark); }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        .logo { font-size: 26px; font-weight: 900; letter-spacing: -1px; color: #000; }
+        .logo span { color: var(--primary-color); }
+
+        /* Botão WhatsApp Flutuante */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(45deg, rgba(0,0,0,0.8), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 5%;
+        }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
+        .hero p { font-size: 1.2rem; max-width: 650px; margin-bottom: 35px; opacity: 0.9; }
+
+        /* Botões CTA */
+        .cta-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 18px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .cta-button:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(255, 77, 77, 0.4); }
+
+        /* Seção de Serviços */
+        .services { padding: 100px 10%; text-align: center; background: #fdfdfd; }
+        .services h2 { font-size: 2.5rem; margin-bottom: 60px; font-weight: 800; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .card {
+            padding: 50px 30px;
+            background: #fff;
+            border-radius: 20px;
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+        .card:hover { border-color: var(--primary-color); transform: translateY(-5px); }
+        .card i { font-size: 45px; color: var(--primary-color); margin-bottom: 25px; }
+        .card h3 { margin-bottom: 15px; font-size: 1.5rem; }
+
+        /* Footer */
+        footer { background: #000; color: #666; padding: 60px 10% 30px; text-align: center; }
+        footer p { font-size: 0.9rem; margin-top: 20px; }
+        
+        @media (max-width: 768px) {
+            header { padding: 15px 5%; }
+            .hero h1 { font-size: 2.5rem; }
+            .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/5515936182306?text=Vim pelo site e quero escalar meu negócio!" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header>
+        <div class="logo">VITRINE VIVA<span>.</span></div>
+        <a href="https://wa.me/5515936182306?text=Vim pelo site e quero escalar meu negócio!" class="cta-button" style="padding: 10px 20px; font-size: 0.9rem;">Falar com Especialista</a>
+    </header>
+
+    <section class="hero">
+        <h1>Sua empresa no topo do mercado digital.</h1>
+        <p>Criativos novos, design de alta conversão validadas para escalar o seu faturamento de forma previsível.</p>
+        <a href="https://wa.me/5515936182306?text=Vim pelo site e quero escalar meu negócio!" class="cta-button" target="_blank">
+            <i class="fab fa-whatsapp"></i> QUERO RESULTADOS AGORA
+        </a>
+    </section>
+
+    <section id="servicos" class="services">
+        <h2>Como ajudamos seu negócio</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-rocket"></i>
+                <h3>Gestão de Criativos</h3>
+                <p>Criativos que vendem. Google Ads, Facebook Ads e Instagram Ads focados em ROI.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-pencil-ruler"></i>
+                <h3>Web Design</h3>
+                <p>Criação de Landing Pages e sites institucionais modernos e ultra velozes.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-bullseye"></i>
+                <h3>Estratégia Digital</h3>
+                <p>Consultoria completa para posicionar sua marca como autoridade no seu nicho.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>Siga-nos: 
+              <a href="https://www.instagram.com/avitrineviva/">
+                <i class="fab fa-instagram" style="margin-left: 10px;"></i> </a>
+              <a href="https://www.facebook.com/profile.php?id=61587001426265">
+                <i class="fab fa-facebook" style="margin-left: 10px;"></i> </a>
+            </p>
+            <hr style="border: 0; border-top: 1px solid #222; margin: 30px 0;">
+            <p>&copy; 2026 Agência Vitrine Viva. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
